@@ -1,0 +1,50 @@
+<body>
+  <header>
+    <h1>Discover a new perspective with every quote :)</h1>
+  </header>
+  <section>
+    <p id="randquote">
+      Be the change that you wish to see in the world - Mahatma Gandhi
+    </p>
+    <button onclick="generate()">Click me to generate quote!</button>
+    <button onclick="share()">Share on Twitter</button>
+  </section>
+  <script>
+    const arrayofquotes = [
+      "The only limit to our realization of tomorrow will be our doubts of today. - Franklin D. Roosevelt",
+      "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe. - Albert Einstein",
+      "The greatest glory in living lies not in never falling, but in rising every time we fall. - Nelson Mandela",
+      "It always seems impossible until it's done. - Nelson Mandela",
+      "The only person you are destined to become is the person you decide to be. - Ralph Waldo Emerson",
+      "Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment. - Buddha",
+      "The purpose of our lives is to be happy. - Dalai Lama",
+      "I can't change the direction of the wind, but I can adjust my sails to always reach my destination. - Jimmy Dean",
+      "Life is really simple, but we insist on making it complicated. - Confucius",
+      "Believe you can and you're halfway there. - Theodore Roosevelt",
+      "Happiness is not something ready made. It comes from your own actions. - Dalai Lama",
+      "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment. - Ralph Waldo Emerson",
+      "The best way to predict the future is to create it. - Peter Drucker",
+      "Change your thoughts and you change your world. - Norman Vincent Peale",
+      "Be the change that you wish to see in the world - Mahatma Gandhi",
+      "It is during our darkest moments that we must focus to see the light. - Aristotle Onassis",
+      "Imagination is more important than knowledge. - Albert Einstein",
+      "Don't count the days, make the days count. - Muhammad Ali",
+      "Your time is limited, don't waste it living someone else's life. - Steve Jobs",
+      "Success is not the key to happiness. Happiness is the key to success. - Albert Schweitzer",
+      "The only impossible journey is the one you never begin. - Tony Robbins",
+    ];
+
+    function generate() {
+      const index = Math.round(Math.random() * arrayofquotes.length);
+      const generated = arrayofquotes[index];
+      document.getElementById("randquote").textContent = generated;
+    }
+    function share() {
+      const quote = document.getElementById("randquote").textContent;
+      const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+        quote
+      )}`;
+      window.open(twitterUrl, "_blank");
+    }
+  </script>
+</body>
